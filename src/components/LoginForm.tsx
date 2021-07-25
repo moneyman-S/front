@@ -36,8 +36,6 @@ export default (props: LoginProps) => {
           </Col>
         </Row>
       </Container>
-
-
     </Form>
   )
 }
