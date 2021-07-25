@@ -1,19 +1,12 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Col, Container, Row } from 'react-bootstrap';
-import Planning from './pages/Planning';
+import Login from "./pages/Login"
 
 function App() {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <Planning />
-        </Col>
-      </Row>
-    </Container>
-  );
+    <Login />
+  )
 }
 
 export default App;
