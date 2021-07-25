@@ -71,5 +71,3 @@ export default (props: Props) => {
         </Container>
     )
 }
-
-//vencimento contato categoria descrição tipo sub-tipo carteira/cartão valor

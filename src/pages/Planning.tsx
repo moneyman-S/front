@@ -40,6 +40,7 @@ export default (props: Props) => {
                     <Button>Criar previsão de transação</Button>
                 </Col>
             </Row>
+            
             <Row>
                 <Col>
                     <Table />
