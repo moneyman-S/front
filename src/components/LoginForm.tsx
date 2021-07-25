@@ -1,10 +1,12 @@
 import { Form, Button, Row, Container, Col } from "react-bootstrap"
 import "./LoginForm.css"
+import { Link } from 'react-router-dom'
+import { LinkContainer } from 'react-router-bootstrap'
 
 type LoginProps = {
   optional?: string;
 }
-
+//eslint-disable-next-line import/no-anonymous-default-export
 export default (props: LoginProps) => {
   return (
     <Form>
@@ -24,9 +26,7 @@ export default (props: LoginProps) => {
         <Row className="d-flex justify-content-center">
           <Col md="2">
             <Row className="mb-2">
-              <Button variant="primary" type="submit">
-                Login
-              </Button>
+              <LinkContainer to="/home"><Button variant="primary" type="submit">Login</Button></LinkContainer>
             </Row>
             <Row>
               <Button variant="secondary" type="submit">
@@ -36,6 +36,6 @@ export default (props: LoginProps) => {
           </Col>
         </Row>
       </Container>
-    </Form>
+    </Form >
   )
 }

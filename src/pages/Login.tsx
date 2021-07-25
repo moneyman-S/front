@@ -5,7 +5,7 @@ import "./Login.css"
 type LoginProps = {
   optional?: string;
 }
-
+//eslint-disable-next-line import/no-anonymous-default-export
 export default (props: LoginProps) => {
   return (
     <Container className="d-flex align-content-between justify-content-sm-between flex-column h-100 p-5">
