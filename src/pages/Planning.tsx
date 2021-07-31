@@ -1,7 +1,7 @@
-import { Button, Col, Container, DropdownButton, Row,} from "react-bootstrap"
+import { Button, Col, Container, DropdownButton, Row, } from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import DropdownItem from "react-bootstrap/esm/DropdownItem"
 import Table from "../components/Table"
 import "./Planning.css"
@@ -9,7 +9,7 @@ import "./Planning.css"
 type Props = {
 
 }
-
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (props: Props) => {
     return (
         <Container>
@@ -21,7 +21,7 @@ export default (props: Props) => {
                         <DropdownItem>3° Opção</DropdownItem>
                     </DropdownButton>
                 </Col>
-                
+
                 <Col>
                     <Row>
                         <Col>
@@ -35,12 +35,12 @@ export default (props: Props) => {
                         </Col>
                     </Row>
                 </Col>
-                
+
                 <Col>
                     <Button>Criar previsão de transação</Button>
                 </Col>
             </Row>
-            
+
             <Row>
                 <Col>
                     <Table />
