@@ -2,7 +2,7 @@ import { Col, Container, Row, Table } from "react-bootstrap"
 import "./Table.css"
 
 type Props = {
-
+    msg: string;
 }
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (props: Props) => {
