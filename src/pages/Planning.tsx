@@ -22,7 +22,7 @@ type TransactionMock = {
 }
 
 const tableModel: TableModel<TransactionMock> = {
-  data: [
+  dataSet: [
     {
       expirationDate: "10/12/2021",
       contact: "Caixa Federal",
@@ -62,7 +62,7 @@ export default (props: PlanningProps) => {
     <Container className="mt-5">
       <Row>
         <Col>
-          <DropdownButton id="dropdown-button" title="Modo" className="w-100">
+          <DropdownButton id="dropdown-button" title="Modo" className="w-100" variant="success">
             <DropdownItem>1° Opção</DropdownItem>
             <DropdownItem>2° Opção</DropdownItem>
             <DropdownItem>3° Opção</DropdownItem>
@@ -72,19 +72,19 @@ export default (props: PlanningProps) => {
         <Col>
           <Row>
             <Col>
-              <Button><FontAwesomeIcon icon={faArrowLeft} /></Button>
+              <Button variant="success"><FontAwesomeIcon icon={faArrowLeft} /></Button>
             </Col>
             <Col md="8">
               <input type="date" className="form-control" />
             </Col>
             <Col className="ml-2">
-              <Button><FontAwesomeIcon icon={faArrowRight} /></Button>
+              <Button variant="success"><FontAwesomeIcon icon={faArrowRight} /></Button>
             </Col>
           </Row>
         </Col>
 
-        <Col>
-          <Button>Criar previsão de transação</Button>
+        <Col className="d-flex flex-row-reverse">
+          <Button variant="success" className="ml-2">Criar previsão de transação</Button>
         </Col>
       </Row>
 

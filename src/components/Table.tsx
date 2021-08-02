@@ -7,7 +7,7 @@ type Column<T = unknown> = {
 }
 
 export type TableModel<T = unknown> = {
-  data: T[];
+  dataSet: T[];
   cols: Column<T>[];
 }
 
@@ -20,14 +20,14 @@ const Table = function <T = unknown>(props: TableProps<T>) {
     <Container>
       <Row>
         <Col>
-          <BootstrapTable striped bordered hover variant="light" >
+          <BootstrapTable className="border border-3 border-success rounded-3" striped bordered hover variant="dark">
             <thead>
               <tr>
                 {props.model.cols.map(({ description }) => <th>{description}</th>)}
               </tr>
             </thead>
             <tbody>
-              {props.model.data.map((data) => {
+              {props.model.dataSet.map((data) => {
                 return (
                   <tr>
                     {props.model.cols.map(({ prop }) => <td>{data[prop]}</td>)}
