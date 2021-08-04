@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Form, Col, Row } from "react-bootstrap";
 
 
 type Props = {
@@ -15,22 +15,49 @@ export default (props: Props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          Criação de categoria
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <Form>
+          <Row>
+            <Col>
+              <Form.Control type="text" placeholder="Categoria" />
+            </Col>
+          </Row>
+        </Form>
+        <Form>
+          <Row>
+            <Col lg="2" className="mt-5">
+              <Form.Select>
+                <option></option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </Form.Select>
+            </Col>
+          </Row>
+        </Form>
+        <br />
+        <Form>
+          <Row>
+            <Col lg="2">
+              <Form.Select>
+                <option></option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </Form.Select>
+            </Col>
+          </Row>
+        </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>Salvar</Button>
+        <Button onClick={props.onHide}>Fechar</Button>
       </Modal.Footer>
-    </Modal>
+    </Modal >
   )
 }
