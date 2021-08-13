@@ -1,73 +1,44 @@
-import { Col, Container, Row, Table } from "react-bootstrap"
+import { Col, Container, Row, Table as BootstrapTable } from "react-bootstrap"
 import "./Table.css"
 
-type Props = {
+type Column<T = unknown> = {
+  description: string;
+  prop: keyof T;
+}
 
+export type TableModel<T = unknown> = {
+  dataSet: T[];
+  cols: Column<T>[];
+}
+
+type TableProps<T = unknown> = {
+  model: TableModel<T>
 }
 // eslint-disable-next-line import/no-anonymous-default-export
-export default (props: Props) => {
+const Table = function <T = unknown>(props: TableProps<T>) {
   return (
     <Container>
       <Row>
         <Col>
-          <Table striped bordered hover>
+          <BootstrapTable className="border border-3 border-success rounded-3" striped bordered hover variant="dark">
             <thead>
               <tr>
-                <th>Vencimento</th>
-                <th>Contato</th>
-                <th>Categoria</th>
-                <th>Descrição</th>
-                <th>Tipo</th>
-                <th>Sub-Tipo</th>
-                <th>Carteira/Cartão</th>
-                <th>Valor</th>
+                {props.model.cols.map(({ description }) => <th>{description}</th>)}
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>10/12/2021</td>
-                <td>Caixa Federal</td>
-                <td>Empréstimo</td>
-                <td>pagar rapido mãe corre perigo</td>
-                <td>Débito</td>
-                <td>Ocasional</td>
-                <td>Cartão</td>
-                <td>R$ 4000</td>
-              </tr>
-              <tr>
-                <td>10/12/2021</td>
-                <td>Caixa Federal</td>
-                <td>Empréstimo</td>
-                <td>pagar rapido mãe corre perigo</td>
-                <td>Débito</td>
-                <td>Ocasional</td>
-                <td>Cartão</td>
-                <td>R$ 4000</td>
-              </tr>
-              <tr>
-                <td>10/12/2021</td>
-                <td>Caixa Federal</td>
-                <td>Empréstimo</td>
-                <td>pagar rapido mãe corre perigo</td>
-                <td>Débito</td>
-                <td>Ocasional</td>
-                <td>Cartão</td>
-                <td>R$ 4000</td>
-              </tr>
-              <tr>
-                <td>10/12/2021</td>
-                <td>Caixa Federal</td>
-                <td>Empréstimo</td>
-                <td>pagar rapido mãe corre perigo</td>
-                <td>Débito</td>
-                <td>Ocasional</td>
-                <td>Cartão</td>
-                <td>R$ 4000</td>
-              </tr>
+              {props.model.dataSet.map((data) => {
+                return (
+                  <tr>
+                    {props.model.cols.map(({ prop }) => <td>{data[prop]}</td>)}
+                  </tr>
+                )
+              })}
             </tbody>
-          </Table>
+          </BootstrapTable>
         </Col>
       </Row>
     </Container>
   )
 }
+export default Table;

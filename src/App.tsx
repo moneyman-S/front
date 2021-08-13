@@ -8,22 +8,27 @@ import {
   Switch,
   Route,
 } from "react-router-dom"
+import 'E:/code/projeto/moneyman/front/src/components/SideBar.css'
 import Planning from "./pages/Planning"
 import { Col, Row, Container } from 'react-bootstrap';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <SideBar />
-          <Login />
-        </Route>
-        <Route path="/Home">
-          <Planning />
-        </Route>
-      </Switch>
-    </Router>
+    <div className="d-flex">
+      <div className="flex-shrink-3">
+        <SideBar />
+      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Login />
+          </Route>
+          <Route path="/Home">
+            <Planning />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   )
 }
 
