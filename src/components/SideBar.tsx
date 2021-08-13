@@ -1,14 +1,15 @@
-import "./SideBar.css"
-import { Button, Col, Collapse, Container, Nav, Row } from "react-bootstrap"
+import React, { ReactElement } from "react";
+import "./SideBar.css";
+import { Button, Col, Container, Nav, Row } from "react-bootstrap";
 import { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleLeft, faAngleRight, faHome, faTable, faCog, faUser, faHeadset } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faHome, faTable, faCog, faUser, faHeadset } from "@fortawesome/free-solid-svg-icons";
 
 type SideBarProps = {
 
 }
 
-export default (props: SideBarProps) => {
+const SideBar = (props: SideBarProps): ReactElement<SideBarProps> => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -44,5 +45,7 @@ export default (props: SideBarProps) => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
+
+export default SideBar;
