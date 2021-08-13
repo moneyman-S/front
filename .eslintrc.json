@@ -24,7 +24,7 @@
         "functional"
     ],
     "rules": {
-        "eof-last": [
+        "eol-last": [
             "error",
             "always"
         ],
