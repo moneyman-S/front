@@ -1,10 +1,10 @@
-import { Form, Button, Row, Container, Col } from "react-bootstrap"
-import "./LoginForm.css"
-import { Link } from 'react-router-dom'
-import { LinkContainer } from 'react-router-bootstrap'
+import { Form, Button, Row, Container, Col } from "react-bootstrap";
+import "./LoginForm.css";
+import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 
 type LoginProps = {
-  optional?: string;
+  readonly optional?: string;
 }
 //eslint-disable-next-line import/no-anonymous-default-export
 export default (props: LoginProps) => {
@@ -37,5 +37,5 @@ export default (props: LoginProps) => {
         </Row>
       </Container>
     </Form >
-  )
-}
+  );
+};

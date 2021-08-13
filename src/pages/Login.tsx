@@ -1,9 +1,9 @@
-import { Container, Row, Col } from "react-bootstrap"
-import LoginForm from "../components/LoginForm"
-import "./Login.css"
+import { Container, Row, Col } from "react-bootstrap";
+import LoginForm from "../components/LoginForm";
+import "./Login.css";
 
 type LoginProps = {
-  optional?: string;
+  readonly optional?: string;
 }
 //eslint-disable-next-line import/no-anonymous-default-export
 export default (props: LoginProps) => {
@@ -20,5 +20,5 @@ export default (props: LoginProps) => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
