@@ -24,6 +24,10 @@
         "functional"
     ],
     "rules": {
+        "eof-last": [
+            "error",
+            "always"
+        ],
         "functional/immutable-data": [
             "error",
             {
