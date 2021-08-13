@@ -1,11 +1,12 @@
+import React from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import "./Table.css";
 
 type Props = {
-    readonly msg: string;
+
 }
 // eslint-disable-next-line import/no-anonymous-default-export
-export default (props: Props) => {
+const MTable: React.FunctionComponent<Props> = (props: Props) => {
   return (
     <Container>
       <Row>
@@ -71,3 +72,4 @@ export default (props: Props) => {
     </Container>
   );
 };
+export default MTable;

@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import Planning from "./pages/Planning";
 
-function App() {
+const App: React.FunctionComponent<unknown> = () => {
   return (
     <Router>
 
@@ -24,6 +24,6 @@ function App() {
 
     </Router>
   );
-}
+};
 
 export default App;
