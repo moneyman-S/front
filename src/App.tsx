@@ -9,13 +9,14 @@ import {
   Route,
 } from "react-router-dom";
 import Planning from "./pages/Planning";
+import { navModel } from "./SideBarModel";
 
 const App: React.FunctionComponent<unknown> = () => {
   return (
 
     <div className="d-flex">
       <div className="flex-shrink-3">
-        <SideBar />
+        <SideBar model={navModel} />
       </div>
       <Router>
 

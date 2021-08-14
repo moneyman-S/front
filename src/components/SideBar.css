@@ -1,16 +1,40 @@
 .sidebar {
-  background-color: rgb(70, 70, 70);
+  max-height: 100vh !important;
   min-height: 100vh !important;
-  padding: 48px 0 0;
+  background-color: rgb(70, 70, 70);
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  padding: 48px 0 0;
+  transition: width 0.5s ease-in-out;
+  overflow-y: hidden;
 }
 
-.sidebar-closed {
-  top: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  min-height: 100vh !important;
-  background-color: rgb(70, 70, 70);
+.open {
+  width: auto;
+}
+
+.closed {
+  width: 74px !important;
+}
+
+.closed .bar-text {
+  pointer-events: none;
+  display: none;
+}
+
+.button {
+  position: absolute;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 48px !important;
+  margin-top: 25%;
+}
+
+.closed .button {
+  margin-left: 38px;
+}
+
+.open .button {
+  margin-left: 107px;
 }
 
 .nav-item {
@@ -38,17 +62,4 @@
 
 .link {
   color: #fff !important;
-}
-
-#sidebar-wrapper {
-  margin-left: -1rem;
-  -webkit-transition: margin 0.25s ease-out;
-  -moz-transition: margin 0.25s ease-out;
-  -o-transition: margin 0.25s ease-out;
-  transition: margin 0.25s ease-out;
-}
-
-#page-content-wrapper {
-  min-width: 0;
-  width: 50%;
 }

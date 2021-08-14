@@ -3,11 +3,22 @@ import "./SideBar.css";
 import { Button, Col, Container, Nav, Row } from "react-bootstrap";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faHome, faTable, faCog, faUser, faHeadset } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 type SideBarProps = {
-
+  readonly model: ModelList;
 }
+
+type NavItem = {
+  readonly link: string;
+  readonly icon: IconDefinition;
+  readonly description: string;
+}
+
+export type ModelList = {
+  readonly dataSet: readonly NavItem[];
+}
+
 
 const SideBar = (props: SideBarProps): ReactElement<SideBarProps> => {
   const [open, setOpen] = useState(false);
@@ -15,31 +26,24 @@ const SideBar = (props: SideBarProps): ReactElement<SideBarProps> => {
   return (
     <Container>
       <Row>
-        <Col className="sidebar" >
+        <Col className={ `sidebar ${open ? "open" : "closed"}`} >
           <Nav defaultActiveKey="/Home" className="flex-column">
-            <Nav.Item className="nav-item">
-              <Nav.Link className="link" href="/"><FontAwesomeIcon className="sidebar-icon" icon={faUser} /> User</Nav.Link>
-            </Nav.Item >
-            <Nav.Item className="nav-item">
-              <Nav.Link className="link" href="/Home"><FontAwesomeIcon className="sidebar-icon" icon={faHome} /> Home</Nav.Link>
-            </Nav.Item>
-            <Nav.Item className="nav-item">
-              <Nav.Link className="link" href="#"><FontAwesomeIcon className="sidebar-icon" icon={faTable} /> Tables</Nav.Link>
-            </Nav.Item>
-            <Nav.Item className="nav-item">
-              <Nav.Link className="link" href="#"><FontAwesomeIcon className="sidebar-icon" icon={faCog} /> Configuration</Nav.Link>
-            </Nav.Item>
-            <Nav.Item className="nav-item">
-              <Nav.Link className="link" href="#"><FontAwesomeIcon className="sidebar-icon" icon={faHeadset} /> Contact-us</Nav.Link>
-            </Nav.Item>
+
+            {props.model.dataSet.map((data,i) => 
+              <Nav.Item key={`link-${i}`} className="nav-item">
+                <Nav.Link className="link" href={data.link}>
+                  <FontAwesomeIcon className="sidebar-icon" icon={data.icon}/>
+                  <span className="bar-text">{data.description}</span>
+                </Nav.Link>
+              </Nav.Item> )}
 
             <Button
               onClick={() => setOpen(!open)}
               variant="success"
               size="sm"
-              className=""
+              className="button"
             >
-              <FontAwesomeIcon icon={faAngleLeft} />
+              <FontAwesomeIcon icon={ open ? faAngleLeft : faAngleRight } />
             </Button>
           </Nav>
         </Col>
