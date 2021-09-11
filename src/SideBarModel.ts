@@ -14,6 +14,6 @@ export const navModel: ModelList ={
     icon("/", faUser, "User"),
     icon("#", faTable, "Tables"),
     icon("#", faCog, "Config"),
-    icon("https://github.com/moneyman-S", faAddressCard, "Contact !")
+    icon("https://github.com/moneyman-S", faAddressCard, "Project")
   ]
 };

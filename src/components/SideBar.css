@@ -4,7 +4,7 @@
   background-color: rgb(70, 70, 70);
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
   padding: 48px 0 0;
-  transition: width 0.5s ease-in-out;
+  transition: width ease .5s;
   overflow-y: hidden;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .closed {
-  width: 74px !important;
+  width: 74px;
 }
 
 .closed .bar-text {
@@ -34,7 +34,7 @@
 }
 
 .open .button {
-  margin-left: 107px;
+  margin-left: 95px;
 }
 
 .nav-item {
@@ -61,5 +61,7 @@
 }
 
 .link {
+  display: flex !important;
+  align-items: center;
   color: #fff !important;
 }
