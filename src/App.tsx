@@ -1,15 +1,15 @@
-import React from 'react';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from "./pages/Login"
+import React from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Login from "./pages/Login";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from "react-router-dom"
-import Planning from "./pages/Planning"
+} from "react-router-dom";
+import Planning from "./pages/Planning";
 
-function App() {
+const App: React.FunctionComponent<unknown> = () => {
   return (
     <Router>
 
@@ -23,7 +23,7 @@ function App() {
       </Switch>
 
     </Router>
-  )
-}
+  );
+};
 
 export default App;

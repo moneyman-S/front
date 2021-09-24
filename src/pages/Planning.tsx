@@ -1,24 +1,25 @@
-import { Button, Col, Container, DropdownButton, Row, } from "react-bootstrap"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import DropdownItem from "react-bootstrap/esm/DropdownItem"
-import Table, { TableModel } from "../components/Table"
-import "./Planning.css"
+import React, {ReactElement} from "react";
+import { Button, Col, Container, DropdownButton, Row, } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import DropdownItem from "react-bootstrap/esm/DropdownItem";
+import Table, { TableModel } from "../components/Table";
+import "./Planning.css";
 
 type PlanningProps = {
 
 }
 
 type TransactionMock = {
-  expirationDate: string,
-  contact: string,
-  category: string,
-  description: string,
-  type: string,
-  subType: string,
-  wallet: string,
-  value: string,
+  readonly expirationDate: string,
+  readonly contact: string,
+  readonly category: string,
+  readonly description: string,
+  readonly type: string,
+  readonly subType: string,
+  readonly wallet: string,
+  readonly value: string,
 }
 
 const tableModel: TableModel<TransactionMock> = {
@@ -54,15 +55,15 @@ const tableModel: TableModel<TransactionMock> = {
     { description: "Carteira/Cartão", prop: "wallet" },
     { description: "Valor", prop: "value" }
   ],
-}
+};
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default (props: PlanningProps) => {
+const Planning = (props: PlanningProps): ReactElement<PlanningProps> => {
   return (
     <Container className="mt-5">
       <Row>
         <Col>
-          <DropdownButton id="dropdown-button" title="Modo" className="w-100" variant="success">
+          <DropdownButton id="dropdown-button" title="Modo" variant="success">
             <DropdownItem>1° Opção</DropdownItem>
             <DropdownItem>2° Opção</DropdownItem>
             <DropdownItem>3° Opção</DropdownItem>
@@ -83,8 +84,8 @@ export default (props: PlanningProps) => {
           </Row>
         </Col>
 
-        <Col className="d-flex flex-row-reverse">
-          <Button variant="success" className="ml-2">Criar previsão de transação</Button>
+        <Col>
+          <Button id="transaction-prev-button" variant="success">Criar previsão de transação</Button>
         </Col>
       </Row>
 
@@ -94,5 +95,7 @@ export default (props: PlanningProps) => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
+
+export default Planning;

@@ -1,12 +1,13 @@
-import { Container, Row, Col } from "react-bootstrap"
-import LoginForm from "../components/LoginForm"
-import "./Login.css"
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import LoginForm from "../components/LoginForm";
+import "./Login.css";
 
 type LoginProps = {
-  optional?: string;
+  readonly optional?: string;
 }
 //eslint-disable-next-line import/no-anonymous-default-export
-export default (props: LoginProps) => {
+const Login: React.FunctionComponent<LoginProps> = (props: LoginProps) => {
   return (
     <Container className="d-flex align-content-between justify-content-sm-between flex-column h-100 p-5">
       <Row className="d-flex justify-content-center mt-5 mb-5">
@@ -20,5 +21,6 @@ export default (props: LoginProps) => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
+export default Login;
