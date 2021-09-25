@@ -3,8 +3,9 @@ import { Modal, Button, Form, Col, Row } from "react-bootstrap";
 
 
 type Props = {
-  onHide: () => void;
-  show: boolean;
+  readonly onSave: () => boolean;
+  readonly onHide: () => boolean;
+  readonly show: boolean;
 };
 
 export default (props: Props) => {
@@ -55,9 +56,9 @@ export default (props: Props) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Salvar</Button>
+        <Button onClick={props.onSave}>Salvar</Button>
         <Button onClick={props.onHide}>Fechar</Button>
       </Modal.Footer>
     </Modal >
-  )
-}
+  );
+};

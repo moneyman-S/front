@@ -1,0 +1,85 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "react-app",
+        "react-app/jest",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "functional"
+    ],
+    "rules": {
+        "react/display-name": "off",
+        "eol-last": [
+            "error",
+            "always"
+        ],
+        "functional/immutable-data": [
+            "error",
+            {
+                "assumeTypes": true,
+                "ignoreClass": false,
+                "ignoreImmediateMutation": true
+            }
+        ],
+        "functional/no-let": "error",
+        "functional/no-class": "error",
+        "functional/prefer-tacit": [
+            "error",
+            {
+                "assumeTypes": {
+                    "allowFixer": true
+                }
+            }
+        ],
+        "functional/no-loop-statement": "error",
+        "functional/prefer-type-literal": "error",
+        "functional/prefer-readonly-type": [
+            "error",
+            {
+                "checkImplicit": false
+            }
+        ],
+        "functional/no-return-void": [
+            "error",
+            {
+                "allowNull": false,
+                "allowUndefined": false
+            }
+        ],
+        "functional/no-this-expression": "error",
+        "functional/no-throw-statement": "error",
+        "functional/no-try-statement": "error",
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
+}

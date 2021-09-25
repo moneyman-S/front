@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import CreateCategoryDialog from "../components/CreateCategoryDialog"
-import "./Categories.css"
+import CreateCategoryDialog from "../components/CreateCategoryDialog";
+import "./Categories.css";
 
 type Props = {
 
@@ -17,6 +17,10 @@ export default (props: Props) => {
         </Button>
         <CreateCategoryDialog
           show={modalShow}
+          onSave={() => {
+            setModalShow(false);
+            return true;
+          }}
           onHide={() => {
             setModalShow(false);
             return true;
@@ -28,5 +32,5 @@ export default (props: Props) => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
