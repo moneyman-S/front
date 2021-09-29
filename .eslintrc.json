@@ -24,6 +24,7 @@
         "functional"
     ],
     "rules": {
+        "react/display-name": "off",
         "eol-last": [
             "error",
             "always"
@@ -59,13 +60,6 @@
             {
                 "allowNull": false,
                 "allowUndefined": false
-            }
-        ],
-        "functional/no-mixed-type": [
-            "error",
-            {
-                "checkInterfaces": true,
-                "checkTypeLiterals": true
             }
         ],
         "functional/no-this-expression": "error",

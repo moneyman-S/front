@@ -8,6 +8,7 @@ import {
   Route,
 } from "react-router-dom";
 import Planning from "./pages/Planning";
+import Categories from "./pages/Categories";
 
 const App: React.FunctionComponent<unknown> = () => {
   return (
@@ -20,6 +21,10 @@ const App: React.FunctionComponent<unknown> = () => {
         <Route path="/Home">
           <Planning />
         </Route>
+        <Route path="/Categories">
+          <Categories />
+        </Route>
+
       </Switch>
 
     </Router>

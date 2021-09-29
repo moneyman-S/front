@@ -3,9 +3,11 @@ import { Button, Col, Container, DropdownButton, Row, } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import DropdownItem from "react-bootstrap/esm/DropdownItem";
+import DropdownItem from "react-bootstrap/DropdownItem";
 import Table from "../components/Table";
 import "./Planning.css";
+import { type } from "os";
+
 type Props = {
 
 }
