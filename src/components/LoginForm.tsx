@@ -26,7 +26,7 @@ const LoginForm: React.FunctionComponent<LoginProps> = (props: LoginProps) => {
         <Row className="d-flex justify-content-center">
           <Col md="2">
             <Row className="mb-2">
-              <LinkContainer to="/home"><Button variant="primary" type="submit">Login</Button></LinkContainer>
+              <LinkContainer to="/home"><Button variant="success" type="submit">Login</Button></LinkContainer>
             </Row>
             <Row>
               <Button variant="secondary" type="submit">
